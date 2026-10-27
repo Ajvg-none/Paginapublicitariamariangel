@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Ediciones By Mariangel — Edición profesional de video vertical (Reels, TikTok, Shorts) para marcas personales y empresas que quieren brillar en redes.">
+  <meta name="theme-color" content="#6B21A8">
+
+  <!-- Open Graph · mejora SEO y previews en redes sociales -->
+  <meta property="og:title" content="Ediciones By Mariangel ✦ Arte Digital">
+  <meta property="og:description"
+    content="Edición profesional de video vertical para marcas personales y empresas. Reels, TikTok, Shorts que enganchan.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+
+  <title>Ediciones By Mariangel ✦ Arte Digital</title>
+
+  <!-- Favicon SVG inline (✦ morado, sin request HTTP extra) -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+
+  <!-- Tipografías: preconnect + carga con font-display: swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Skip link · accesibilidad para teclado y lectores de pantalla -->
+  <a href="#hero" class="skip-link">Ir al contenido principal</a>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════
+       HERO SECTION
+       ══════════════════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+
+      <!-- ── Capa de fondo: degradado aurora + rejilla + grano ── -->
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__aurora hero__aurora--1"></div>
+        <div class="hero__aurora hero__aurora--2"></div>
+        <div class="hero__aurora hero__aurora--3"></div>
+        <div class="hero__grid"></div>
+        <div class="hero__noise"></div>
+      </div>
+
+      <!-- ── Canvas: partículas "destellos de edición" (JS) ── -->
+      <canvas class="hero__particles" aria-hidden="true"></canvas>
+
+      <!-- ── Iconos decorativos flotantes ── -->
+      <div class="hero__icons" aria-hidden="true">
+        <span class="hero__icon hero__icon--tijera" data-depth="26"><i>✂️</i></span>
+        <span class="hero__icon hero__icon--claqueta" data-depth="16"><i>🎬</i></span>
+        <span class="hero__icon hero__icon--camara" data-depth="32">
+          <i>📸</i>
+          <span class="marquee marquee--icon">
+            <b class="marquee__label">capa · foto</b>
+            <i class="marquee__handle marquee__handle--tl"></i>
+            <i class="marquee__handle marquee__handle--tr"></i>
+            <i class="marquee__handle marquee__handle--bl"></i>
+            <i class="marquee__handle marquee__handle--br"></i>
+          </span>
+        </span>
+        <span class="hero__icon hero__icon--pincel" data-depth="20"><i>🖌️</i></span>
+        <span class="hero__icon hero__icon--brillo" data-depth="38"><i>✨</i></span>
+      </div>
+
+      <!-- ── Contenido principal del hero ── -->
+      <div class="hero__content">
+
+        <p class="hero__eyebrow a-rise" style="--ad:.35s">
+          ✦ edición de video
+        </p>
+
+        <!-- Título H1 con revelado tipo máscara (clip-path) -->
+        <div class="hero__title-wrap">
+          <h1 class="hero__title">
+            <span class="hero__title-line hero__title-line--script">Ediciones</span>
+            <span class="hero__title-line hero__title-line--sans">
+              <span class="hero__title-word">By Mariangel</span>
+              <span class="hero__caret" aria-hidden="true"></span>
+            </span>
+          </h1>
+
+          <span class="marquee marquee--title" aria-hidden="true">
+            <b class="marquee__label">capa · título</b>
+            <i class="marquee__handle marquee__handle--tl"></i>
+            <i class="marquee__handle marquee__handle--tr"></i>
+            <i class="marquee__handle marquee__handle--bl"></i>
+            <i class="marquee__handle marquee__handle--br"></i>
+          </span>
+        </div>
+
+        <!-- Subtítulo con efecto shimmer -->
+        <p class="hero__subtitle a-rise" style="--ad:1.05s">
+          Transformando momentos en arte digital ✨
+        </p>
+
+        <!-- ── Barra de estado inferior (guiño a software de edición) ── -->
+        <div class="hero__status a-rise" style="--ad:1.6s" aria-hidden="true">
+          <span class="hero__status-item">
+            <i class="hero__rec"></i> REC <span id="timecode">00:00:00</span>
+          </span>
+          <span class="hero__status-item hero__status-item--timeline">
+            <span class="hero__track"><span class="hero__playhead"></span></span>
+          </span>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- ══════════ FIN HERO ══════════ -->
+
+    <!-- ══════════════════════════════════════════════════════
+       SECCIÓN "SOBRE MÍ" · REDISEÑO EDITORIAL HORIZONTAL
+       ══════════════════════════════════════════════════════ -->
+    <section class="about" id="sobre-mi" aria-labelledby="about-titulo">
+
+      <!-- Destellos ambientales sutiles de fondo -->
+      <div class="about__sparkles" aria-hidden="true">
+        <span class="about__sparkle about__sparkle--1">✦</span>
+        <span class="about__sparkle about__sparkle--2">✦</span>
+        <span class="about__sparkle about__sparkle--3">•</span>
+        <span class="about__sparkle about__sparkle--4">✦</span>
+        <span class="about__sparkle about__sparkle--5">•</span>
+      </div>
+
+      <div class="about__container">
+
+        <!-- ── Bloque Editorial Dividido (Presentación + Retrato Proporcionado) ── -->
+        <div class="about__split reveal" style="--i:0">
+
+          <!-- Columna Izquierda: Introducción y Propuesta -->
+          <div class="about__bio">
+            <div class="about__badge-pill">
+              <span class="about__badge-dot" aria-hidden="true"></span>
+              <span>✦ Hola, soy Mariangel</span>
+            </div>
+            <h2 class="about__title" id="about-titulo">
+              Edición profesional para <span class="about__title-gradient">marcas que destacan</span>
+            </h2>
+            <p class="about__lead">
+              Cuento con formación profesional y una visión enfocada en los detalles. Me dedico a transformar ideas en
+              videos dinámicos, estéticos y pensados para conectar con tu audiencia desde el primer segundo.
+            </p>
+
+            <blockquote class="about__quote-pill">
+              <span class="about__quote-mark">“</span>
+              <p>Transformando contenido en videos que conectan, enganchan y marcan la diferencia.</p>
+            </blockquote>
+          </div>
+
+          <!-- Columna Derecha: Tarjeta Fotográfica Proporcionada y Equilibrada -->
+          <div class="about__portrait-wrap">
+            <div class="about__parallax">
+              <figure class="about__portrait-card">
+                <div class="about__portrait-photo">
+                  <img src="mariangel.jpeg" alt="Mariangel en su espacio creativo de edición"
+                    class="about__portrait-img" width="1022" height="1022" loading="lazy" decoding="async">
+                  <div class="about__portrait-overlay" aria-hidden="true"></div>
+                </div>
+
+                <!-- Badge flotante sutil sobre la foto -->
+                <div class="about__floating-badge about__floating-badge--compact" aria-hidden="true">
+                  <span class="about__floating-icon">🎬</span>
+                  <div class="about__floating-info">
+                    <strong>Estudio Creativo</strong>
+                    <small>Especialista en formato vertical</small>
+                  </div>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ── Bento Grid: Trayectoria, Especialidad y Propuesta ── -->
+        <div class="about__grid">
+
+          <!-- Tarjeta 1: Formación y Criterio -->
+          <article class="about__card about__card--trajectory reveal" style="--i:2">
+            <div class="about__card-header">
+              <span class="about__card-icon" aria-hidden="true">🎓</span>
+              <span class="about__card-tag">Formación & Criterio</span>
+            </div>
+            <h3 class="about__card-title">Profesionalismo y dedicación</h3>
+            <p class="about__card-text">
+              Cuento con <strong>formación profesional</strong>, lo que me aporta disciplina, orden y un alto estándar
+              de calidad en cada entrega. Trabajo con seriedad, cuidando cada detalle para que cada proyecto tenga un
+              acabado impecable y a tiempo.
+            </p>
+          </article>
+
+          <!-- Tarjeta 2: La Especialidad -->
+          <article class="about__card about__card--specialty reveal" style="--i:3">
+            <div class="about__card-header">
+              <span class="about__card-icon" aria-hidden="true">📱</span>
+              <span class="about__card-tag">Especialización</span>
+            </div>
+            <h3 class="about__card-title">Formato vertical de alto impacto</h3>
+            <p class="about__card-text">
+              Me especializo en contenido para <strong>Reels, TikTok y YouTube Shorts</strong>. Aplico ritmo ágil,
+              cortes precisos y dinamismo visual para enganchar al espectador y retener su atención de principio a fin.
+            </p>
+            <ul class="about__chips" aria-label="Formatos de video">
+              <li><span>📱</span> Reels</li>
+              <li><span>🎬</span> TikTok</li>
+              <li><span>▶️</span> Shorts</li>
+            </ul>
+          </article>
+
+          <!-- Tarjeta 3: Propuesta de Valor -->
+          <article class="about__card about__card--value reveal" style="--i:4">
+            <div class="about__card-header">
+              <span class="about__card-icon" aria-hidden="true">✨</span>
+              <span class="about__card-tag">Propuesta de Valor</span>
+            </div>
+            <h3 class="about__card-title">El plus que hace brillar tu marca</h3>
+            <p class="about__card-text">
+              Más que cortar videos, aporto <strong>estética, ritmo y coherencia visual</strong>. Mi meta es que cada
+              pieza represente tu identidad con profesionalismo y transmita confianza inmediata a tu audiencia.
+            </p>
+            <div class="about__value-badge">
+              <span class="about__value-sparkle" aria-hidden="true">✦</span>
+              <span>Calidad, puntualidad y estilo en cada entrega</span>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- ══════════ FIN SOBRE MÍ ══════════ -->
+
+    <!-- ══════════════════════════════════════════════════════
+       PROCESO DE TRABAJO
+       ══════════════════════════════════════════════════════ -->
+    <section class="services" id="servicios" aria-labelledby="process-titulo">
+
+      <div class="process__container">
+
+        <header class="process__header">
+          <p class="process__kicker">✦ así trabajamos</p>
+          <h2 class="process__title" id="process-titulo">Así de fácil trabajamos</h2>
+          <span class="section-underline" aria-hidden="true"></span>
+          <p class="process__subtitle">
+            Sin complicaciones. Tú compartes, yo edito, tú brillas.
+          </p>
+        </header>
+
+        <ol class="process__timeline">
+          <li class="process-step" style="--i:0">
+            <span class="process-step__number">1</span>
+            <span class="process-step__icon" aria-hidden="true">💬</span>
+            <h3 class="process-step__title">Me cuentas tu idea</h3>
+            <p class="process-step__text">
+              Compartes tu contenido y me hablas de lo que quieres
+              lograr. Yo entiendo tu visión.
+            </p>
+          </li>
+
+          <li class="process-step" style="--i:1">
+            <span class="process-step__number">2</span>
+            <span class="process-step__icon" aria-hidden="true">✨</span>
+            <h3 class="process-step__title">Yo hago la magia</h3>
+            <p class="process-step__text">
+              Me encargo de todo: edición, ritmo, estética y ese plus
+              que hace que tu marca destaque.
+            </p>
+          </li>
+
+          <li class="process-step" style="--i:2">
+            <span class="process-step__number">3</span>
+            <span class="process-step__icon" aria-hidden="true">🚀</span>
+            <h3 class="process-step__title">Recibes y publicas</h3>
+            <p class="process-step__text">
+              Te entrego tu contenido listo para brillar en redes.
+              Así de simple.
+            </p>
+          </li>
+        </ol>
+      </div>
+
+    </section>
+    <!-- ══════════ FIN PROCESO ══════════ -->
+
+    <!-- ══════════════════════════════════════════════════════
+       PAQUETES DE EDICIÓN
+       ══════════════════════════════════════════════════════ -->
+    <section class="pricing" id="paquetes" aria-labelledby="pricing-titulo">
+      <div class="pricing__container">
+
+        <header class="pricing__header reveal" style="--i:0">
+          <p class="pricing__kicker">✦ paquetes de edición</p>
+          <h2 class="pricing__title" id="pricing-titulo">Paquetes de edición</h2>
+          <span class="section-underline" aria-hidden="true"></span>
+          <p class="pricing__subtitle">Válido para videos de hasta 1 minuto por unidad.</p>
+        </header>
+
+        <div class="pricing__grid">
+
+          <article class="price-card" style="--i:0">
+            <h3 class="price-card__name">Pack Básico</h3>
+            <p class="price-card__price">
+              <span class="price-card__amount">$50</span>
+              <span class="price-card__currency">USD</span>
+            </p>
+            <p class="price-card__meta">3 videos</p>
+            <p class="price-card__hint">Para empezar o contenido puntual.</p>
+            <p class="price-card__hint price-card__hint--muted">≈ $16,7 por video</p>
+            <a href="#contacto" class="price-card__cta">Quiero este pack</a>
+          </article>
+
+          <article class="price-card" style="--i:1">
+            <h3 class="price-card__name">Pack Medio</h3>
+            <p class="price-card__price">
+              <span class="price-card__amount">$80</span>
+              <span class="price-card__currency">USD</span>
+            </p>
+            <p class="price-card__meta">6 videos</p>
+            <p class="price-card__hint">El equilibrio ideal para publicar seguido.</p>
+            <p class="price-card__hint price-card__hint--muted">≈ $13,3 por video</p>
+            <a href="#contacto" class="price-card__cta">Quiero este pack</a>
+          </article>
+
+          <article class="price-card price-card--featured" style="--i:2">
+            <span class="price-card__badge">✦ Mejor valor</span>
+            <h3 class="price-card__name">Pack Pro</h3>
+            <p class="price-card__price">
+              <span class="price-card__amount">$145</span>
+              <span class="price-card__currency">USD</span>
+            </p>
+            <p class="price-card__meta">12 videos</p>
+            <p class="price-card__hint">Máximo contenido al mejor precio por video.</p>
+            <p class="price-card__hint price-card__hint--muted">≈ $12,08 por video</p>
+            <a href="#contacto" class="price-card__cta">Quiero este pack</a>
+          </article>
+
+        </div>
+
+        <p class="pricing__note reveal" style="--i:3">
+          ¿Necesitas videos de mayor duración o una cantidad diferente? Me avisas y
+          te preparo una <strong>cotización a la medida</strong>.
+        </p>
+      </div>
+    </section>
+    <!-- ══════════ FIN PAQUETES ══════════ -->
+
+    <!-- ══════════════════════════════════════════════════════
+       QUÉ INCLUYE EL SERVICIO
+       ══════════════════════════════════════════════════════ -->
+    <section class="includes" id="incluye" aria-labelledby="includes-titulo">
+      <div class="includes__container">
+
+        <header class="includes__header reveal" style="--i:0">
+          <p class="includes__kicker">✦ lo que incluye</p>
+          <h2 class="includes__title" id="includes-titulo">¿Qué incluye el servicio?</h2>
+          <span class="section-underline" aria-hidden="true"></span>
+          <p class="includes__subtitle">
+            Todos los paquetes incluyen lo mismo: una edición completa, cuidada y lista para publicar.
+          </p>
+        </header>
+
+        <ul class="includes__list">
+          <li class="includes__item reveal" style="--i:1">
+            <span class="includes__icon" aria-hidden="true">✂️</span>
+            <p>Corte, armado y eliminación de errores y pausas para un <strong>ritmo dinámico</strong>.</p>
+          </li>
+          <li class="includes__item reveal" style="--i:2">
+            <span class="includes__icon" aria-hidden="true">💬</span>
+            <p>Subtítulos (simples o dinámicos) y <strong>textos llamativos</strong> en pantalla.</p>
+          </li>
+          <li class="includes__item reveal" style="--i:3">
+            <span class="includes__icon" aria-hidden="true">🎵</span>
+            <p>Música de fondo y <strong>optimización de audio</strong>.</p>
+          </li>
+          <li class="includes__item reveal" style="--i:4">
+            <span class="includes__icon" aria-hidden="true">✨</span>
+            <p>Transiciones, efectos visuales y <strong>elementos gráficos</strong>.</p>
+          </li>
+          <li class="includes__item reveal" style="--i:5">
+            <span class="includes__icon" aria-hidden="true">🎨</span>
+            <p>Corrección básica de <strong>color y luz</strong>.</p>
+          </li>
+          <li class="includes__item reveal" style="--i:6">
+            <span class="includes__icon" aria-hidden="true">📱</span>
+            <p>Adaptación al formato y plataforma que necesites (<strong>TikTok, Reels, Shorts</strong>, etc.).</p>
+          </li>
+          <li class="includes__item reveal" style="--i:7">
+            <span class="includes__icon" aria-hidden="true">🔁</span>
+            <p><strong>1 revisión incluida</strong> por video, válida sobre el material editado original.</p>
+          </li>
+        </ul>
+
+        <p class="includes__note reveal" style="--i:8">
+          Revisiones adicionales: <strong>$5 c/u</strong>.
+        </p>
+      </div>
+    </section>
+    <!-- ══════════ FIN QUÉ INCLUYE ══════════ -->
+
+    <!-- ══════════════════════════════════════════════════════
+       SERVICIOS ADICIONALES
+       ══════════════════════════════════════════════════════ -->
+    <section class="extras" id="adicionales" aria-labelledby="extras-titulo">
+      <div class="extras__container">
+
+        <header class="extras__header reveal" style="--i:0">
+          <p class="extras__kicker">✦ extras</p>
+          <h2 class="extras__title" id="extras-titulo">Servicios adicionales</h2>
+          <span class="section-underline" aria-hidden="true"></span>
+          <p class="extras__subtitle">
+            Súmalos a tu paquete si los necesitas. Se cotizan aparte del precio base.
+          </p>
+        </header>
+
+        <div class="extras__grid">
+
+          <article class="extra-card" style="--i:0">
+            <span class="extra-card__icon" aria-hidden="true">🎙️</span>
+            <div class="extra-card__body">
+              <h3 class="extra-card__title">Voz en off</h3>
+              <p class="extra-card__text">Si no cuentas con locución grabada, la integro por ti.</p>
+            </div>
+            <span class="extra-card__price">+$5</span>
+          </article>
+
+          <article class="extra-card" style="--i:1">
+            <span class="extra-card__icon" aria-hidden="true">🖼️</span>
+            <div class="extra-card__body">
+              <h3 class="extra-card__title">Miniaturas</h3>
+              <p class="extra-card__text">Portada diseñada para tu video de Reels o TikTok.</p>
+            </div>
+            <span class="extra-card__price">+$5 c/u</span>
+          </article>
+
+          <article class="extra-card" style="--i:2">
+            <span class="extra-card__icon" aria-hidden="true">⚡</span>
+            <div class="extra-card__body">
+              <h3 class="extra-card__title">Entrega Express</h3>
+              <p class="extra-card__text">Edición prioritaria en menos de 24 horas.</p>
+            </div>
+            <span class="extra-card__price">+$10 / video</span>
+          </article>
+
+          <article class="extra-card" style="--i:3">
+            <span class="extra-card__icon" aria-hidden="true">📐</span>
+            <div class="extra-card__body">
+              <h3 class="extra-card__title">Formato adicional</h3>
+              <p class="extra-card__text">El mismo video adaptado a horizontal (YouTube) o cuadrado.</p>
+            </div>
+            <span class="extra-card__price">+$5 c/u</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    <!-- ══════════ FIN SERVICIOS ADICIONALES ══════════ -->
+
+    <!-- ══════════════════════════════════════════════════════
+       CONDICIONES Y MÉTODO DE TRABAJO
+       ══════════════════════════════════════════════════════ -->
+    <section class="conditions" id="condiciones" aria-labelledby="conditions-titulo">
+      <div class="conditions__container">
+
+        <header class="conditions__header reveal" style="--i:0">
+          <p class="conditions__kicker">✦ cómo trabajo</p>
+          <h2 class="conditions__title" id="conditions-titulo">Condiciones y método de trabajo</h2>
+          <span class="section-underline" aria-hidden="true"></span>
+          <p class="conditions__subtitle">
+            Todo claro y sin sorpresas: así coordinamos tu proyecto de principio a fin.
+          </p>
+        </header>
+
+        <div class="conditions__grid">
+
+          <article class="condition-card reveal" style="--i:1">
+            <span class="condition-card__icon" aria-hidden="true">📁</span>
+            <h3 class="condition-card__title">Entrega de material</h3>
+            <p class="condition-card__text">
+              Mi servicio es 100% edición: tú me proporcionas el contenido grabado. Para
+              garantizar la máxima calidad (sin compresión), todo el intercambio —material
+              original y videos finales— se maneja por carpetas en <strong>Google Drive</strong>.
+            </p>
+          </article>
+
+          <article class="condition-card reveal" style="--i:2">
+            <span class="condition-card__icon" aria-hidden="true">🕦</span>
+            <h3 class="condition-card__title">Tiempos de entrega</h3>
+            <p class="condition-card__text">
+              La primera entrega suele tardar entre <strong>1 y 2 días</strong>. Al enviarte el
+              borrador, cuentas con hasta <strong>5 días continuos</strong> para enviarme tus
+              observaciones de la revisión incluida.
+            </p>
+          </article>
+
+          <article class="condition-card reveal" style="--i:3">
+            <span class="condition-card__icon" aria-hidden="true">💵</span>
+            <h3 class="condition-card__title">Modalidad de pago</h3>
+            <p class="condition-card__text">
+              Se inicia con un <strong>50% de anticipo</strong> para arrancar la edición y el
+              <strong>50% restante</strong> al entregarte los videos terminados.
+            </p>
+          </article>
+
+        </div>
+
+        <div class="conditions__pay reveal" style="--i:4">
+          <span class="conditions__pay-icon" aria-hidden="true">💳</span>
+          <p>
+            Métodos de pago: <strong>Zinli</strong>, <strong>Zelle</strong> o <strong>Binance</strong>
+            si estás fuera de Venezuela. Para pagos locales en Bolívares, te proporciono los datos al concretar.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- ══════════ FIN CONDICIONES ══════════ -->
+
+    <!-- ══════════════════════════════════════════════════════
+       EXPLORAR MÁS TRABAJOS · MOCKUP DE TELÉFONO VERTICAL CENTRADO
+       ══════════════════════════════════════════════════════ -->
+    <section class="explore" id="explorar" aria-labelledby="explore-titulo">
+
+      <div class="explore__container">
+
+        <header class="explore__header reveal" style="--i:0">
+          <p class="explore__kicker">✦ REPRODUCCIÓN AUTOMÁTICA</p>
+          <h2 class="explore__title" id="explore-titulo">¿Quieres ver más?</h2>
+          <span class="section-underline" aria-hidden="true"></span>
+          <p class="explore__subtitle">
+            Muestra continua de mis ediciones en formato vertical. Reproduciendo automáticamente.
+          </p>
+        </header>
+
+        <!-- ── Showcase de Smartphone en Formato Vertical 9:16 (CENTRADO) ── -->
+        <div class="explore__showcase explore__showcase--centered reveal" style="--i:1">
+
+          <!-- Dispositivo Móvil Físico Simulado Centrado -->
+          <div class="phone-device-wrap">
+            <div class="phone-device" id="phone-player">
+              <!-- Botones laterales simulados del celular -->
+              <span class="phone-device__side-btn phone-device__side-btn--vol-up" aria-hidden="true"></span>
+              <span class="phone-device__side-btn phone-device__side-btn--vol-down" aria-hidden="true"></span>
+              <span class="phone-device__side-btn phone-device__side-btn--power" aria-hidden="true"></span>
+
+              <div class="phone-device__screen">
+                <!-- Dynamic Island / Notch superior -->
+                <div class="phone-device__notch" aria-hidden="true">
+                  <span class="phone-device__camera"></span>
+                  <span class="phone-device__speaker"></span>
+                </div>
+
+                <!-- Barra de estado superior -->
+                <div class="phone-device__statusbar" aria-hidden="true">
+                  <span class="phone-device__time">9:16</span>
+                  <span class="phone-device__status-icons">
+                    <span id="phone-video-counter" class="phone-counter-pill">1 / 4</span>
+                    <span>100%</span>
+                  </span>
+                </div>
+
+                <!-- Video HTML5 principal · el JS inicia la reproducción al entrar en pantalla -->
+                <video class="phone-device__video" id="phone-video-elem"
+                       src="videos/reel-01.mp4"
+                       poster="videos/reel-01.jpg"
+                       playsinline muted preload="metadata">
+                  Tu navegador no soporta video HTML5.
+                </video>
+
+                <!-- Fallback: solo botón de play, sin textos -->
+                <div class="phone-device__placeholder" id="phone-placeholder">
+                  <div class="phone-placeholder__ambient" aria-hidden="true"></div>
+                  <div class="phone-placeholder__content">
+                    <button type="button" class="phone-placeholder__play-btn" id="placeholder-play-btn" aria-label="Reproducir video">
+                      <span class="phone-play-icon">▶</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Controles superpuestos (Estilo TikTok / Instagram Reels) -->
+                <div class="phone-device__overlay">
+                  <!-- Botón de sonido (Mute / Unmute) -->
+                  <button type="button" class="phone-device__sound-btn" id="phone-sound-toggle" aria-label="Activar o desactivar sonido">
+                    <span class="phone-sound-icon" id="phone-sound-icon">🔇</span>
+                  </button>
+
+                  <!-- Barra de progreso de reproducción -->
+                  <div class="phone-device__progress" aria-hidden="true">
+                    <div class="phone-device__progress-bar" id="phone-progress-bar"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Indicadores de los 4 videos -->
+            <div class="phone-trackers" id="phone-trackers" role="group" aria-label="Seleccionar video">
+              <button type="button" class="phone-tracker is-active" data-video="0" aria-label="Ver video 1"></button>
+              <button type="button" class="phone-tracker" data-video="1" aria-label="Ver video 2"></button>
+              <button type="button" class="phone-tracker" data-video="2" aria-label="Ver video 3"></button>
+              <button type="button" class="phone-tracker" data-video="3" aria-label="Ver video 4"></button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Micro-destello decorativo entre teléfono y botón -->
+        <p class="explore__sparkle reveal" style="--i:2" aria-hidden="true">✨</p>
+
+        <!-- Botón para desplegar más opciones -->
+        <div class="explore__trigger-wrap reveal" style="--i:3">
+          <button class="explore__trigger" type="button" aria-expanded="false" aria-controls="explore-panel">
+            <span>Explorar mis trabajos</span>
+            <span class="explore__chevron" aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <div class="explore__panel" id="explore-panel" role="region" aria-label="Opciones para explorar más trabajos">
+          <div class="explore__panel-inner">
+            <div class="explore__grid">
+
+              <a class="explore__card explore__card--portfolio" href="REEMPLAZA_ESTE_LINK_PORTAFOLIO" target="_blank"
+                rel="noopener noreferrer" aria-label="Abrir el portafolio completo en una pestaña nueva" style="--i:0">
+                <span class="explore__card-icon" aria-hidden="true">🎬</span>
+                <h3 class="explore__card-title">Portafolio completo</h3>
+                <p class="explore__card-text">
+                  Explora todos mis proyectos en un solo lugar,
+                  organizados por categoría.
+                </p>
+                <span class="explore__card-cta">Ir ahora →</span>
+              </a>
+
+              <a class="explore__card explore__card--tiktok" href="https://www.tiktok.com/@soyeditoraaa?_r=1&_t=ZS-9ASAEIKWfWm" target="_blank"
+                rel="noopener noreferrer" aria-label="Abrir el TikTok de Mariangel en una pestaña nueva" style="--i:1">
+                <span class="explore__card-icon" aria-hidden="true">🎵</span>
+                <h3 class="explore__card-title">Sígueme en TikTok</h3>
+                <p class="explore__card-text">
+                  Contenido fresco, edits y tips de edición
+                  en formato vertical.
+                </p>
+                <span class="explore__card-cta">Ir ahora →</span>
+              </a>
+
+            </div>
+
+            <p class="explore__note">Contenido actualizado constantemente ✨</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ══════════ FIN EXPLORAR ══════════ -->
+
+    <!-- ══════════════════════════════════════════════════════
+       CONTACTO · CTA FINAL (WhatsApp)
+       ══════════════════════════════════════════════════════ -->
+    <section class="contact" id="contacto" aria-labelledby="contact-titulo">
+      <div class="contact__container">
+
+        <header class="contact__header reveal" style="--i:0">
+          <p class="contact__kicker">✦ empecemos</p>
+          <h2 class="contact__title" id="contact-titulo">Cuéntame tu idea</h2>
+          <span class="section-underline" aria-hidden="true"></span>
+          <p class="contact__subtitle">
+            ¿Qué idea tienes o cuál de los paquetes se adapta mejor a tu proyecto?
+            Escríbeme y comenzamos a coordinar. ¡Quedo atenta! 🚀
+          </p>
+        </header>
+
+        <div class="contact__actions reveal" style="--i:1">
+          <a class="contact__cta"
+             href="https://wa.me/584126447472?text=Hola%20Mariangel%2C%20quiero%20informaci%C3%B3n%20sobre%20tus%20paquetes%20de%20edici%C3%B3n%20%E2%9C%A8"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Abrir WhatsApp para hablar con Mariangel">
+            <span class="contact__cta-icon" aria-hidden="true">💬</span>
+            Escríbeme por WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </section>
+    <!-- ══════════ FIN CONTACTO ══════════ -->
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+       PIE DE PÁGINA (FOOTER)
+       ══════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <p class="footer__copy">© 2026 Ediciones By Mariangel. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+
+</html>
