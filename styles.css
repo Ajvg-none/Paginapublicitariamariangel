@@ -3136,6 +3136,14 @@ html.js .explore__panel.is-open .explore__card {
   color: rgba(88, 28, 135, .65);
 }
 
+.footer__coverage {
+  margin: .35rem 0 0;
+  font-size: .75rem;
+  font-weight: 300;
+  letter-spacing: .04em;
+  color: rgba(88, 28, 135, .68);
+}
+
 /* ════════════════════════════════════════════════════════════
    ===== SECCIONES DE SERVICIOS =====
    Paquetes · Qué incluye · Adicionales · Condiciones · Contacto
